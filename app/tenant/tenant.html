@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-md-4">
+		<h2>Create Tenant</h2>
+		<form ng-submit="submit()">
+			<div class="form-group">
+				<label for"name">Tenant Name</label>
+				<input type="text" class="form-control" id="name" placeholder="Tenant Name" ng-model="name" >
+			</div>
+			<div class="form-group">
+				<label for"client_no">Client Number</label>
+				<input type="text" class="form-control" id="client_no" placeholder="Client Number" ng-model="client_no" >
+			</div>
+			<div class="form-group">
+				<label for"auth_key">Authorization Key</label>
+				<input type="text" class="form-control" id="auth_key" placeholder="Authorization Key" ng-model="auth_key" >
+			</div>
+			<div class="form-group">
+				<label for"type">Environment Type</label>
+				<select class="form-control" ng-model="environment">
+					<option value="stage_future">Stage Future</option>
+					<option value="stage_current">Stage Current</option>
+					<option value="production">Production</option>
+					<option value="stage_future_cph">Stage Future CPH</option>
+					<option value="production_cph">Production CPH</option>
+				</select>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Save Tenant" />
+		</form>
+	</div>
+	<div class="col-md-8">
+		<h2>Tenants</h2>
+		<table class="table table-striped table-hover">
+			<thead>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Client No</th>
+				<th>Auth Key</th>
+				<th>Environment</th>
+				<th>Created</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tenant in tenants">
+					<td>{{ tenant.id }}</td>
+					<td>{{ tenant.name }}</td>
+					<td>{{ tenant.client_no }}</td>
+					<td>{{ tenant.auth_key }}</td>
+					<td>{{ tenant.environment }}</td>
+					<td>{{ tenant.created_at }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

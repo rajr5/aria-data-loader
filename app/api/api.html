@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-md-4">
+		<h2>Create API</h2>
+		<form ng-submit="submit()">
+			<div class="form-group">
+				<label for"name">Api Name</label>
+				<input type="text" class="form-control" id="name" placeholder="Api Name" ng-model="name" >
+			</div>
+			<div class="form-group">
+				<label for"type">Api Type</label>
+				<select class="form-control" ng-model="type">
+					<option value="core">Core</option>
+					<option value="object">Object</option>
+					<option value="admintools">Admintools</option>
+				</select>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Save API" />
+		</form>
+	</div>
+	<div class="col-md-8">
+		<h2>APIs</h2>
+		<table class="table table-striped table-hover">
+			<thead>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Created</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="api in apis">
+					<td>{{ api.id }}</td>
+					<td>{{ api.name }}</td>
+					<td>{{ api.type }}</td>
+					<td>{{ api.created_at }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
