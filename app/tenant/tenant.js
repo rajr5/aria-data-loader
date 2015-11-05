@@ -67,7 +67,6 @@ angular.module('myApp.tenant', ['ngRoute'])
 	};
 
 	this.getNextId = function() {
-		$log.info(this.tenants);
 		var id = 1;
 		if (this.tenants.length > 0) {
 			id = this.tenants[this.tenants.length - 1].id + 1;
