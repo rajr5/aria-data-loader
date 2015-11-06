@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.api',
+  'myApp.aria',
   'myApp.tenant',
   'myApp.version',
   'ui.bootstrap'
